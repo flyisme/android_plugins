@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.tools.build:gradle:7.0.3'
+    implementation gradleApi()
+    implementation localGroovy()
+    /* 👇👇👇👇 引用这两个模块 👇👇👇👇 */
+    implementation "com.didiglobal.booster:booster-api:4.0.0"
+    implementation "com.didiglobal.booster:booster-transform-asm:4.0.0"
+}
+
+sourceCompatibility = "11"
+targetCompatibility = "11"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
