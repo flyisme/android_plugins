@@ -20,7 +20,5 @@ fun test(arg1: Int) {
 ```
 ## 效果:
 ![image.png](https://flyisme.work/upload/2021/12/image-967b580013c94d599ef8270338535210.png)
-## 插桩完成无法正常运行时
-报错时使用`javap -c`检查字节码插桩后的代码.
 ## 参考
 [DoraemonKit](https://github.com/didi/DoraemonKit)
